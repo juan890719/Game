@@ -33,23 +33,51 @@ public class GameView extends View {
         super(context, attrs);
     }
 
-    public float getPosX() {
-        return posX;
+    public void moveUp(){
+        if(posY > 60) {
+            posY -= 50;
+            invalidate();
+        }
+    }
+    public void moveDown(){
+        if(posY < getHeight() - 250) {
+            posY += 50;
+            invalidate();
+        }
     }
 
-    public void setPosX(float posX) {
-       if(posX > 0 && posX < getWidth() - 215){
-           this.posX = posX;
-       }
+    public void moveRight(){
+         if(posX < getWidth() - 240){
+            posX +=50;
+            invalidate();
+          }
+     }
+     public void moveLeft(){
+         if(posX > 40){
+             posX -=50;
+             invalidate();
+         }
     }
 
-    public float getPosY() {
-        return posY;
-    }
 
-    public void setPosY(float posY) {
-       if(posY > 0 && posY < getHeight() - 180) {
-           this.posY = posY;
-       }
-    }
+
+//    public float getPosX() {
+//        return posX;
+//    }
+//
+//    public void setPosX(float posX) {
+//       if(posX > 0 && posX < getWidth() - 215){
+//           this.posX = posX;
+//       }
+//    }
+//
+//    public float getPosY() {
+//        return posY;
+//    }
+//
+//    public void setPosY(float posY) {
+//       if(posY > 0 && posY < getHeight() - 180) {
+//           this.posY = posY;
+//       }
+//    }
 }
